@@ -1,0 +1,201 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)$ blade.php?page=$1 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)&&([a-zA-Z0-9_-]+)$ blade.php?page=$1&token=$2 [L]
+RewriteRule ^/ blade.php?page=login [L]
+
+Options -Indexes
+
+<Files get_seller_products.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files edit_product.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files del_variant.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files add_variant.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_variant_list.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+<Files edit_variant.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files edit_product_variant.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files do_check_pickup.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_shippings.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files get_tax_commission.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+
+<Files do_del_staff.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+<Files do_chg_pay_slip.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+<Files get_expense.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+<Files get_supplier.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+<Files get_sale.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_purchase.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files do_add_supplier.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_customer_report.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files do_get_expcat.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_sale_report.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_purchase_report.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_expense_cat.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_supplier_report.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+<Files get_expense_report.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+<Files get_balancesheet.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_sale_payment.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_purchase_payment.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_balancesheet_total.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_customer_details.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+<Files do_del_advance_salary_payment.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_salary_payments.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_image_data.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files update_status.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files do_add_product.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files get_price.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+php_value sendmail_from "staffortal@gmail.com"
+
+
+php_value post_max_size 128M
+
+php_value max_input_vars  1112500

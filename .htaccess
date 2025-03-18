@@ -1,0 +1,72 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)$ blade.php?page=$1 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)&&([a-zA-Z0-9_-]+)$ blade.php?page=$1&token=$2 [QSA,L]
+RewriteRule ^/ blade.php?page=login [L]
+
+Options -Indexes
+
+
+<Files *.php>
+    Order Deny,Allow
+    Order Deny,Allow
+    Deny from all
+    </Files>
+
+<Files blade.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+<Files ex.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+
+<Files logout.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files blade2.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+<Files index.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files pdf.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files mail.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+<Files ajax/prod_details.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+php_value sendmail_from "staffortal@gmail.com"
+
+
+php_value post_max_size 128M
+
+php_value max_input_vars  1112500
+
+php_flag display_errors Off
